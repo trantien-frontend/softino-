@@ -1,0 +1,61 @@
+.page-services {
+  background: #fbfbfb;
+  padding-top: 8rem;
+  padding-bottom: 12rem;
+  &__item {
+    h3 {
+      text-align: left;
+    }
+    p {
+      padding: 15px 0;
+    }
+    .page-list {
+      @include reponsive(phone) {
+        display: flex;
+      }
+      ul {
+        flex-basis: 50%;
+        li {
+          position: relative;
+          display: block;
+          margin-bottom: 10px;
+          padding-left: 15px;
+          &:last-child {
+            padding-bottom: 0;
+          }
+          .bullet-points {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 10px;
+            height: 2px;
+          }
+        }
+      }
+    }
+  }
+}
+.team {
+  &--style-2 {
+    background: #f3f5ff;
+    position: relative;
+    padding-top: 10rem;
+    .team-partern {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      img {
+      }
+    }
+    .team-title {
+      margin-left: 6rem;
+      h3 {
+        text-align: left;
+      }
+      P {
+        padding: 15px 0;
+      }
+    }
+  }
+}

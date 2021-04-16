@@ -1,0 +1,116 @@
+.loading {
+  position: fixed;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: #000;
+  transition: .5s;
+  visibility: visible;
+  opacity: 1;
+  @include flex-box(flex, center, center);
+  &__item {
+    position: relative;
+    width: 40rem;
+    height: 40rem;
+    &-child {
+      position: absolute;
+      width: 50%;
+      height: 50%;
+      overflow: hidden;
+      &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        opacity: 0.5;
+      }
+      &:nth-child(1) {
+        left: 0;
+        top: 0;
+        &::before {
+          left: 50%;
+          top: 50%;
+          background: #2575fc;
+        }
+      }
+      &:nth-child(2) {
+        right: 0;
+        top: 0;
+        &::before {
+          right: 50%;
+          top: 50%;
+          background: #00c9ff;
+        }
+      }
+      &:nth-child(3) {
+        right: 0;
+        bottom: 0;
+        &::before {
+          right: 50%;
+          bottom: 50%;
+          background: #ff512f;
+        }
+      }
+      &:nth-child(4) {
+        left: 0;
+        bottom: 0;
+        &::before {
+          left: 50%;
+          bottom: 50%;
+          background: #481ea7;
+        }
+      }
+      @for $i from 1 to 5 {
+        &:nth-child(#{$i}) {
+          &::before {
+            animation: light-load-#{$i} 4s ease-in-out infinite;
+          }
+        }
+      }
+    }
+    &-text {
+      width: 50px;
+      height: 50px;
+      z-index: 5;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      overflow: hidden;
+      .item__character {
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        position: relative;
+        opacity: 0;
+        animation: slide-load 8s ease-in-out infinite normal;
+        span {
+          line-height: 50px;
+          display: block;
+          font-size: 3rem;
+          color: white;
+        }
+      }
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      left: 50%;
+      top: 50%;
+      width: 43%;
+      height: 43%;
+      background: black;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+    }
+  }
+  &--off {
+    z-index: -9999;
+    visibility: hidden;
+    opacity: 0;
+  }
+}

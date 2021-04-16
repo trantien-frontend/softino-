@@ -1,0 +1,37 @@
+mixin theme-section(page)
+        .theme
+            div(class="theme-btn bg-theme") 
+                span(class="fas fa-spinner")
+            .theme__content
+                h3(class="theme__content-title text-theme") softino with
+                h4 awesome colors
+                if page == 'index'
+                    .theme__content-items
+                        div(class="theme__item theme-default" title="theme-default")
+                        div(class="theme__item theme-2" title="theme-2")
+                        div(class="theme__item theme-3 selected"  title="theme-3")
+                        div(class="theme__item theme-4" title="theme-4")
+                        div(class="theme__item theme-5" title="theme-5")
+                        div(class="theme__item theme-6" title="theme-6")
+                if page == 'services' || page == 'about us'
+                    .theme__content-items
+                        div(class="theme__item theme-default selected" title="theme-default")
+                        div(class="theme__item theme-2" title="theme-2")
+                        div(class="theme__item theme-3 "  title="theme-3")
+                        div(class="theme__item theme-4" title="theme-4")
+                        div(class="theme__item theme-5" title="theme-5")
+                        div(class="theme__item theme-6" title="theme-6")
+                .theme__content-btn 
+                    a(href="#" class="button button--circle button--style-first button-theme" data-text="PurchaseNow")
+                        span P
+                        span u
+                        span r
+                        span c
+                        span h
+                        span a
+                        span s
+                        span e
+                        span N
+                        span o
+                        span w
+

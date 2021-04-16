@@ -1,0 +1,22 @@
+include ./video-popup.pug
+mixin about-section(page)
+    if page == 'index' 
+        .about
+            .about__partern 
+                img(src="./images/video-partern.png", alt="")
+            .container
+                .about__block
+                    +videoPopup
+                    div(class="about__title col-lg-10")
+                        h3 Softino Is Built For 
+                            span(class="text-theme") Software 
+                            |Like You. With Useful Features An Intuitive Interface And 
+                            span(class="text-theme") Powerful Design 
+                            |Built By A Community Of Developers, It Helps You Focus On What You Do Best. 
+    if page == 'services' 
+        .about
+            .about__partern 
+                img(src="./images/video-partern.png", alt="")
+            .container
+                div(class='about__block about__block--style-2')
+                    +videoPopup            

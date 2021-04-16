@@ -1,0 +1,224 @@
+include ./dots.pug
+mixin nav-menu(page) 
+  if page == 'index' 
+    ul.nav-container__menu
+      li(class="nav-container__menu-item")
+        a(href="#" class="nav-container__menu-link nav-container__menu-link--active") home 
+          span(class="sub-plus") +
+          +dots
+        -let subMenuHome = ['home 1','home 2','home 3','home 4','home 5','home 6']
+          ul(class="sub-menu")
+            each item in subMenuHome
+              li 
+                a(href='index.html' class="nav-container__menu-link")= item
+                  +dots
+      li(class="nav-container__menu-item")
+        a(href="#" class="nav-container__menu-link") pages
+          span(class="sub-plus") +
+          +dots
+        -let subMenuPages = ['team','team single','faq','element','comming soon','error 404']
+          ul(class="sub-menu")
+            each item in subMenuPages
+              if item == 'element'
+                li 
+                  a(href="#" class="nav-container__menu-link")= item
+                    span(class="sub-plus") +
+                    +dots
+                  -let innerSub = ['accordion','blog post','counter','feature box','pricing table','team','testimonial']
+                    ul(class="sub-menu__inner")
+                      each item in innerSub 
+                        li 
+                          a(href="#" class="nav-container__menu-link")= item
+                            +dots
+              else
+                li 
+                  a(href="#" class="nav-container__menu-link")= item
+                    +dots
+      li(class="nav-container__menu-item")
+        a(href="#" class="nav-container__menu-link") about us
+          span(class="sub-plus") +
+          +dots
+        -let subMenuAbouts = ['about us 1','about us 2']
+          ul(class="sub-menu")
+            each item in subMenuAbouts
+              li 
+                a(href='about.html' class="nav-container__menu-link")= item 
+                  +dots
+      li(class="nav-container__menu-item")
+        a(href="#" class="nav-container__menu-link") services
+          span(class="sub-plus") +
+          +dots
+        -let subMenuService = ['service 1','service 2']
+          ul(class="sub-menu")
+            each item in subMenuService
+              li 
+                a(href='services.html' class="nav-container__menu-link")= item 
+                  +dots
+      li(class="nav-container__menu-item")
+        a(href="#" class="nav-container__menu-link") blogs
+          span(class="sub-plus") +
+          +dots
+        -let subMenuBlog = ['blog 1','blog 2']
+            ul(class="sub-menu")
+              each item in subMenuBlog
+                li 
+                  a(href='#' class="nav-container__menu-link")= item 
+                    +dots
+      li(class="nav-container__menu-item")
+        a(href="#" class="nav-container__menu-link") contact us
+          span(class="sub-plus") +
+          +dots
+        -let subMenuContact = ['contact 1','contact 2']
+          ul(class="sub-menu")
+            each item in subMenuContact
+              li 
+                a(href='#' class="nav-container__menu-link")= item 
+                  +dots
+  if page == 'services' 
+    ul.nav-container__menu
+      li(class="nav-container__menu-item")
+        a(href="#" class="nav-container__menu-link") home 
+          span(class="sub-plus") +
+          +dots
+        -let subMenuHome = ['home 1','home 2','home 3','home 4','home 5','home 6']
+          ul(class="sub-menu")
+            each item in subMenuHome
+              li 
+                a(href='index.html' class="nav-container__menu-link")= item
+                  +dots
+      li(class="nav-container__menu-item")
+        a(href="#" class="nav-container__menu-link") pages
+          span(class="sub-plus") +
+          +dots
+        -let subMenuPages = ['team','team single','faq','element','comming soon','error 404']
+          ul(class="sub-menu")
+            each item in subMenuPages
+              if item == 'element'
+                li 
+                  a(href="#" class="nav-container__menu-link")= item
+                    span(class="sub-plus") +
+                    +dots
+                  -let innerSub = ['accordion','blog post','counter','feature box','pricing table','team','testimonial']
+                    ul(class="sub-menu__inner")
+                      each item in innerSub 
+                        li 
+                          a(href="#" class="nav-container__menu-link")= item
+                            +dots
+              else
+                li 
+                  a(href="#" class="nav-container__menu-link")= item
+                    +dots
+      li(class="nav-container__menu-item")
+        a(href="#" class="nav-container__menu-link") about us
+          span(class="sub-plus") +
+          +dots
+        -let subMenuAbouts = ['about us 1','about us 2']
+          ul(class="sub-menu")
+            each item in subMenuAbouts
+              li 
+                a(href='about.html' class="nav-container__menu-link")= item 
+                  +dots
+      li(class="nav-container__menu-item")
+        a(href="#" class="nav-container__menu-link nav-container__menu-link--active ") services
+          span(class="sub-plus") +
+          +dots
+        -let subMenuService = ['service 1','service 2']
+          ul(class="sub-menu")
+            each item in subMenuService
+              li 
+                a(href='services.html' class="nav-container__menu-link")= item 
+                  +dots
+      li(class="nav-container__menu-item")
+        a(href="#" class="nav-container__menu-link") blogs
+          span(class="sub-plus") +
+          +dots
+        -let subMenuBlog = ['blog 1','blog 2']
+            ul(class="sub-menu")
+              each item in subMenuBlog
+                li 
+                  a(href='#' class="nav-container__menu-link")= item 
+                    +dots
+      li(class="nav-container__menu-item")
+        a(href="#" class="nav-container__menu-link") contact us
+          span(class="sub-plus") +
+          +dots
+        -let subMenuContact = ['contact 1','contact 2']
+          ul(class="sub-menu")
+            each item in subMenuContact
+              li 
+                a(href='#' class="nav-container__menu-link")= item 
+                  +dots
+  if page == 'about us' 
+    ul.nav-container__menu
+      li(class="nav-container__menu-item")
+        a(href="#" class="nav-container__menu-link") home 
+          span(class="sub-plus") +
+          +dots
+        -let subMenuHome = ['home 1','home 2','home 3','home 4','home 5','home 6']
+          ul(class="sub-menu")
+            each item in subMenuHome
+              li 
+                a(href='index.html' class="nav-container__menu-link")= item
+                  +dots
+      li(class="nav-container__menu-item")
+        a(href="#" class="nav-container__menu-link") pages
+          span(class="sub-plus") +
+          +dots
+        -let subMenuPages = ['team','team single','faq','element','comming soon','error 404']
+          ul(class="sub-menu")
+            each item in subMenuPages
+              if item == 'element'
+                li 
+                  a(href="#" class="nav-container__menu-link")= item
+                    span(class="sub-plus") +
+                    +dots
+                  -let innerSub = ['accordion','blog post','counter','feature box','pricing table','team','testimonial']
+                    ul(class="sub-menu__inner")
+                      each item in innerSub 
+                        li 
+                          a(href="#" class="nav-container__menu-link")= item
+                            +dots
+              else
+                li 
+                  a(href="#" class="nav-container__menu-link")= item
+                    +dots
+      li(class="nav-container__menu-item")
+        a(href="#" class="nav-container__menu-link nav-container__menu-link--active") about us
+          span(class="sub-plus") +
+          +dots
+        -let subMenuAbouts = ['about us 1','about us 2']
+          ul(class="sub-menu")
+            each item in subMenuAbouts
+              li 
+                a(href='#' class="nav-container__menu-link")= item 
+                  +dots
+      li(class="nav-container__menu-item")
+        a(href="#" class="nav-container__menu-link") services
+          span(class="sub-plus") +
+          +dots
+        -let subMenuService = ['service 1','service 2']
+          ul(class="sub-menu")
+            each item in subMenuService
+              li 
+                a(href='services.html' class="nav-container__menu-link")= item 
+                  +dots
+      li(class="nav-container__menu-item")
+        a(href="#" class="nav-container__menu-link") blogs
+          span(class="sub-plus") +
+          +dots
+        -let subMenuBlog = ['blog 1','blog 2']
+            ul(class="sub-menu")
+              each item in subMenuBlog
+                li 
+                  a(href='#' class="nav-container__menu-link")= item 
+                    +dots
+      li(class="nav-container__menu-item")
+        a(href="#" class="nav-container__menu-link") contact us
+          span(class="sub-plus") +
+          +dots
+        -let subMenuContact = ['contact 1','contact 2']
+          ul(class="sub-menu")
+            each item in subMenuContact
+              li 
+                a(href='#' class="nav-container__menu-link")= item 
+                  +dots

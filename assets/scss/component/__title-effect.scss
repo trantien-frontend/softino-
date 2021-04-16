@@ -1,0 +1,17 @@
+.title-effect {
+  position: relative;
+  display: inline-block;
+  .eclipse {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    animation: title-effect 2s ease-in-out infinite;
+  }
+  span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: white;
+    transform: translate(-50%,-50%);
+  }
+}

@@ -1,0 +1,86 @@
+.page-about {
+    padding-bottom: 2rem;
+    &__item {
+        margin-bottom: 3rem;
+        h3 {
+            text-align: left;
+            padding: 10px 0;
+        }
+        .page-about__button {
+            padding-top: 15px;
+            .button--style-third {
+                span {
+                    color: white;
+                }
+            }
+            a {
+                &:nth-child(2) {
+                    margin-left: 10px;
+                }
+            }
+        }
+        @include reponsive(laptop) {
+            margin-bottom: 0;
+        }
+    }
+}
+.team {
+    &--style-3 {
+        padding: 0;
+        .team-partern { 
+            position: relative;
+            img {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            &::after {
+                content: '';
+                background: inherit;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                opacity: .92;
+            }
+        }
+        .team-title {
+            position: relative;
+            z-index: 2;
+            padding-top: 6rem;
+            padding-bottom: 10rem;
+            .title-effect {
+                .eclipse {
+                    background: white;
+                }
+            }
+            h3 {
+                text-align: left;
+                color: white;
+            }
+        }
+        .team-slides--style-3 {
+            position: relative;
+            z-index: 3;
+            margin-left: auto;
+            margin-top: -8rem;
+        }
+        .owl-dots {
+            text-align: center;
+            .owl-dot {
+                width: 1rem;
+                height: 5px;
+                background-color: $color-title;
+                margin: 0 2px;
+                transition: .5s;
+                border-radius: 3px;
+                outline: none;
+            }
+            .active {
+                width: 2rem;
+            }
+        }
+    }
+}

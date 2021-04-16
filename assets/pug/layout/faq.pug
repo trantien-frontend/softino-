@@ -1,0 +1,20 @@
+include ../mixins/dots.pug
+.faq 
+    .container 
+        div(class='row row-align')
+            div(class="col-lg-6 col-md-12 col-12 faq-img")
+                div(class="faq-img__item")
+                    img(src="./images/faq-image.jpg", alt="")
+                    +box-loader
+            div(class="col-lg-6 col-md-12 col-12" id="arcodinate")
+                    -let faqCard = [{'title':'consectetur adipisicing elit, sed ?'},{'title':'temporo incididunt ut labore et dolore ?'},{'title':'quis nostrd exercitation ullamco laboris ?'}]
+                    -let faqDsc = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodas temporo incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.'
+                        each card in faqCard 
+                            div(class="faq__card")
+                                div(class="faq__card-head hover-theme-bg")     
+                                    h6= card.title 
+                                        span(class="text-theme") + 
+                                .faq__card-dsc 
+                                    p(class="dsc")= faqDsc
+                    
+

@@ -1,0 +1,202 @@
+.price {
+  position: relative;
+  &-partern {
+    position: relative;
+    &__img {
+      position: absolute;
+      background: #f3f5ff;
+      top: 0;
+      left: 0;
+    }
+    &__bg {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: #f3f5ff;
+    }
+  }
+  &-title {
+    padding: 15px 0;
+    width: 80%;
+    @include reponsive(tablet) {
+      width: 100%;
+    }
+    h3 {
+      text-align: left;
+    }
+    &__dsc {
+      color: $color-title;
+      padding: 15px 0;
+      @include font-size(16, 27, normal);
+    }
+  }
+  &-tab {
+    &__item {
+      padding: 2rem 0;
+      text-align: center;
+      border-radius: 10px;
+      transition: 0.5s all;
+      box-shadow: $shadow-card;
+      position: relative;
+      &--white {
+        background: white;
+        margin-bottom: 3rem;
+        @include reponsive(tablet) {
+          margin-bottom: 0;
+        }
+      }
+      &--theme {
+        padding: 6rem 0;
+        .price-list {
+          .list {
+            li {
+              color: white;
+            }
+          }
+        }
+        .price-tab-title {
+          color: white;
+        }
+        .price-value {
+          span {
+            color: white;
+          }
+        }
+      }
+      .price-inside {
+        position: absolute;
+        top: 50%;
+        left: 85%;
+        transform: translate(-50%, -50%) rotate(-90deg);
+        text-transform: capitalize;
+        color: rgba(0, 0, 0, 0.04);
+        @include font-size(80, 80);
+        font-weight: weight(9);
+      }
+      .price-value {
+        &__text {
+          @include font-size(60, 60);
+          font-weight: weight(7);
+          font-family: $f-title;
+          position: relative;
+          display: inline-block;
+          &--default {
+            color: $color-title;
+          }
+          &--white {
+            color: white;
+          }
+          span {
+            position: absolute;
+            right: 100%;
+            @include font-size(26);
+            font-weight: weight(4);
+          }
+        }
+        span {
+          display: block;
+          padding-top: 1.8rem;
+          text-transform: capitalize;
+        }
+      }
+      .price-tab-title {
+        @include font-size(30, 36, 72);
+        text-transform: uppercase;
+        padding-bottom: 1.8rem;
+        padding-top: 1.8rem;
+      }
+      .price-list {
+        .list {
+          li {
+            padding-bottom: 2rem;
+            text-transform: capitalize;
+            &:last-child {
+              padding-bottom: 2.3rem;
+            }
+          }
+        }
+      }
+      &:hover {
+        box-shadow: 0px 0px 30px -1px rgba(0, 0, 0, 0.3);
+      }
+    }
+  }
+  &--style-2 {
+    padding: 3rem 0;
+    position: relative;
+    .price-card {
+      .price-tab__item {
+        position: relative;
+        overflow: hidden;
+        &::before {
+          content: "";
+          position: absolute;
+          z-index: -1;
+          left: -10%;
+          top: -10%;
+          width: 120%;
+          height: 50%;
+          background: #fafaff;
+        }
+        &--active {
+          padding: 4rem 0;
+        }
+      }
+      .price-list {
+        position: relative;
+        z-index: 1;
+      }
+      .price-value {
+        position: relative;
+        z-index: 2;
+      }
+      .price-tab__item {
+        position: relative;
+        z-index: 2;
+        &--white {
+          margin-bottom: 3rem;
+        }
+      }
+      @for $i from 1 through 3 {
+        @if $i == 1 or $i == 3 {
+          &:nth-child(#{$i}) {
+            .price-tab__item {
+              &::before {
+                content: "";
+                transform: rotate(-10deg);
+              }
+            }
+          }
+        } @else {
+          &:nth-child(#{$i}) {
+            .price-tab__item {
+              &::before {
+                content: "";
+                transform: rotate(10deg);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &--style-3 {
+    .price-title {
+      text-align: center;
+      h3 {
+        text-align: center;
+        padding-top: 15px;
+      }
+    }
+  }
+  .hexagon-partern {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}

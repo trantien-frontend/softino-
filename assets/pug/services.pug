@@ -1,0 +1,87 @@
+include ./mixins/JS-CSS.pug
+include ./mixins/mixin.pug
+include ./mixins/theme.pug
+include ./mixins/hero.pug
+include ./mixins/feature.pug
+include ./mixins/about.pug
+include ./mixins/counter.pug
+include ./mixins/team.pug
+include ./mixins/price.pug
+include ./mixins/blog.pug
+include ./mixins/footer.pug
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Sofino
+        link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css")
+        link(rel="preconnect" href="https://fonts.gstatic.com")
+        link(href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800&family=Titillium+Web:wght@300;400;600;700;900&display=swap" rel="stylesheet")
+        link(href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet")
+        link(rel="shortcut icon" href="./images/imageURL.ico")
+        +block-css
+    body
+        -let page = 'services'
+        .wrapper 
+            +theme-section(page)
+            include ./component/loading.pug
+            include ./component/overlay.pug
+            include ./component/scroll-top.pug
+            .head 
+                div(class="nav nav--style-1") 
+                    .container-fluid
+                        div(class="nav-container")
+                            .nav-container__logo
+                                a(href="#" class="logo")
+                                    img(src="./images/logo-theme-3.png", class="theme-logo" alt="")
+                            +nav-menu(page)
+                            .nav-container__button
+                                a(href='#' class="button button-theme button--square button--style-first" data-text="Login")
+                                    span L
+                                    span o
+                                    span g
+                                    span i
+                                    span n
+                            .nav-container__bars
+                                div(class="bar bg-theme bar--top")
+                                div(class="bar bg-theme bar--center")
+                                div(class="bar bg-theme bar--bottom")
+                +hero(page)
+            .main 
+                +feature(page)
+                .page-services 
+                    .container 
+                        div(class="row row-align") 
+                            div(class="col-lg-6 col-md-6 col-12")
+                                .page-services__item 
+                                    img(src="./images/banner-img.png", alt="")
+                            div(class="col-lg-6 col-md-6 col-12")
+                                .page-services__item 
+                                    div(class="title-effect")
+                                        div(class="eclipse bg-theme")
+                                        span(class="flaticon-info")
+                                    h3(class="section-title section-title--style-1") Grow Your Software With
+                                        span(class="text-theme") “Softino”
+                                    p(class="dsc-title") Softino is an all-new stylish Software 
+                                        |For device that can show you things. awareness, drive traffic, 
+                                        |connect with customers.
+                                    div(class="page-list")
+                                        -let pageListFirst = ['Design must be functional','Aenean pellentes vitae','Lusce enim nulla mollis']
+                                        ul 
+                                            each item in pageListFirst 
+                                                li(class='dsc')= item
+                                                    div(class="bullet-points bg-theme")
+                                        -let pageListSecond = ['Futionality must into','Mattis effic iturut magna','Phasellus eget felis']
+                                        ul 
+                                            each item in pageListSecond 
+                                                li(class="dsc")= item
+                                                    div(class="bullet-points bg-theme")
+                +about-section(page)
+                +counter(page)
+                +team(page)
+                +price-section(page)
+                include ./layout/brand.pug
+                +blog(page)
+                +footer(page)
+        +block-js

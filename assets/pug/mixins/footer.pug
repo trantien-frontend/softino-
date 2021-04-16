@@ -1,0 +1,171 @@
+mixin footer(page)
+    if page == 'index'
+        .footer
+            .footer-bg
+                img(src="./images/footer-bg.png", alt="")
+            .container 
+                .footer-top 
+                    .row 
+                        div(class="col-lg-4 col-md-6 col-12")
+                            .footer-top__item
+                                .item-logo
+                                    a(href="#")
+                                        img(src="", class="theme-logo" alt="")
+                                p(class='dsc') Softino Software Landing Page Is fully responsible, 
+                                    |Build whatever you like with the Softino, 
+                                    |Softino is the creative, modern HTML5 Template suitable for Your business.
+                        div(class="col-lg-4 col-md-6 col-12")
+                            .footer-top__item
+                                .footer-lists
+                                    -const footerlist = ['1','2']
+                                        each item in footerlist 
+                                            ul.footer-lists__list 
+                                                if item == '1' 
+                                                    -const listFirst = ['about us','service','team','team single','contact us']
+                                                    each first in listFirst
+                                                        li 
+                                                            a(href="#" class="hover-theme-text")= first
+                                                if item == '2'
+                                                    -const listSecond = ['blog','faq','error 404','privacy policy','terms']
+                                                    each second in listSecond 
+                                                        li 
+                                                            a(href='#' class="hover-theme-text")=second
+                        div(class="col-lg-4 col-md-6 col-12")
+                            .footer-top__item 
+                                ul.item-contact 
+                                    li
+                                        p(class='dsc') Address:
+                                            b  423B, Road Wordwide Country, USA
+                                    li
+                                        |Email: 
+                                        a(class="contact__mail text-theme" href="mailto:themeht123@gmail.com") 
+                                            b themeht123@gmail.com
+                                    li  
+                                        |Phone
+                                        a(class="text-theme" href="tel:+912345678900") 
+                                            b +91-234-567-8900
+                                    li  
+                                        |Fax
+                                        a(class="text-theme" href="tel:+912345678900") 
+                                            b +91-234-567-8900
+                .subcribe-box
+                    div(class="row row-align") 
+                        div(class="col-lg-6 col-md-6 col-12")
+                            .subcribe-box__item 
+                                .item-title 
+                                    h3 Subscribe Our Newsletter
+                                    p(class='dsc') Get started for 1 Month free trial No Purchace required.
+                        div(class="col-lg-6 col-md-6 col-12")
+                            .subcribe-box__item 
+                                .item-submit
+                                    form(action='#')
+                                        input(type="email" placeholder="email address" required)
+                                        input(type="submit" value="Subscribe" name="subcribe" class="button-theme")
+                .footer-bottom
+                    div(class="row row-align")
+                        div(class="col-12 col-md-6 col-lg-6") 
+                            .footer-bottom__item 
+                                p(class="coppyright dsc") Copyright 2019 Softino 
+                                    |Theme by 
+                                    span(class="underline text-theme") ThemeHt
+                                    |  | All Rights Reserved
+                        div(class="col-12 col-md-6 col-lg-6")
+                            .footer-bottom__item 
+                                ul(class="list-social")
+                                    li 
+                                        a(href="#")
+                                            span(class="fab fa-facebook-f")
+                                            |facebook
+                                    li 
+                                        a(href="#")
+                                            span(class="fab fa-twitter")
+                                            |twitter 
+                                    li 
+                                        a(href="#")
+                                            span(class="fab fa-google-plus-g")
+                                            |google plus
+    if page == 'services' || page == 'about us'
+        .footer
+            .footer-bg
+                img(src="./images/footer-bg-2.png", alt="")
+            .container 
+                .subcribe-box
+                    div(class="row row-align") 
+                        div(class="col-lg-6 col-md-6 col-12")
+                            .subcribe-box__item 
+                                .item-title 
+                                    h3 Subscribe Our Newsletter
+                                    p(class='dsc') Get started for 1 Month free trial No Purchace required.
+                        div(class="col-lg-6 col-md-6 col-12")
+                            .subcribe-box__item 
+                                .item-submit
+                                    form(action='#')
+                                        input(type="email" placeholder="email address" required)
+                                        input(type="submit" value="Subscribe" name="subcribe" class="button-theme")
+                .footer-top 
+                    .row 
+                        div(class="col-lg-4 col-md-6 col-12")
+                            .footer-top__item
+                                .item-logo
+                                    a(href="#")
+                                        img(src="", class="theme-logo" alt="")
+                                p(class='dsc') Softino Software Landing Page Is fully responsible, 
+                                    |Build whatever you like with the Softino, 
+                                    |Softino is the creative, modern HTML5 Template suitable for Your business.
+                        div(class="col-lg-4 col-md-6 col-12")
+                            .footer-top__item
+                                .footer-lists
+                                    -const footerlist = ['1','2']
+                                        each item in footerlist 
+                                            ul.footer-lists__list 
+                                                if item == '1' 
+                                                    -const listFirst = ['about us','service','team','team single','contact us']
+                                                    each first in listFirst
+                                                        li 
+                                                            a(href="#" class="hover-theme-text")= first
+                                                if item == '2'
+                                                    -const listSecond = ['blog','faq','error 404','privacy policy','terms']
+                                                    each second in listSecond 
+                                                        li 
+                                                            a(href='#' class="hover-theme-text")=second
+                        div(class="col-lg-4 col-md-6 col-12")
+                            .footer-top__item 
+                                ul.item-contact 
+                                    li
+                                        p(class='dsc') Address:
+                                            b  423B, Road Wordwide Country, USA
+                                    li
+                                        |Email: 
+                                        a(class="contact__mail text-theme" href="mailto:themeht123@gmail.com") 
+                                            b themeht123@gmail.com
+                                    li  
+                                        |Phone
+                                        a(class="text-theme" href="tel:+912345678900") 
+                                            b +91-234-567-8900
+                                    li  
+                                        |Fax
+                                        a(class="text-theme" href="tel:+912345678900") 
+                                            b +91-234-567-8900
+                .footer-bottom
+                    div(class="row row-align")
+                        div(class="col-12 col-md-6 col-lg-6") 
+                            .footer-bottom__item 
+                                p(class="coppyright dsc") Copyright 2019 Softino 
+                                    |Theme by 
+                                    span(class="underline text-theme") ThemeHt
+                                    |  | All Rights Reserved
+                        div(class="col-12 col-md-6 col-lg-6")
+                            .footer-bottom__item 
+                                ul(class="list-social")
+                                    li 
+                                        a(href="#")
+                                            span(class="fab fa-facebook-f")
+                                            |facebook
+                                    li 
+                                        a(href="#")
+                                            span(class="fab fa-twitter")
+                                            |twitter 
+                                    li 
+                                        a(href="#")
+                                            span(class="fab fa-google-plus-g")
+                                            |google plus

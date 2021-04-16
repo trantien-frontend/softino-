@@ -1,0 +1,93 @@
+.faq {
+  position: relative;
+  margin-left: -15px;
+  @include reponsive(laptop) {
+    padding-top: 10rem;
+    padding-bottom: 15rem;
+  }
+  &-img {
+    margin-bottom: 15px;
+    @include reponsive(laptop) {
+      position: absolute !important;
+      left: 0 !important;
+    }
+    &__item {
+      position: relative;
+      padding-top: 5rem;
+      border-radius: 5px;
+      box-shadow: $shadow-card;
+      overflow: hidden;
+      .box-loader {
+        position: absolute;
+        top: 1.8rem;
+        width: 100%;
+        padding-left: 10px;
+        &__dot {
+          display: inline-block;
+          border-radius: 50%;
+          width: 10px;
+          height: 10px;
+          margin: 0 8px;
+          @for $i from 0 through 2 {
+            &:nth-child(#{$i + 1}) {
+              animation: opacitychange 1s ease-in-out $i * 0.33s infinite;
+            }
+          }
+        }
+      }
+    }
+  }
+  #arcodinate {
+    margin-left: auto;
+  }
+  &__card {
+    margin-bottom: 15px;
+    &-head {
+      box-shadow: $shadow-card;
+      border-radius: 5px;
+      cursor: pointer;
+      h6 {
+        position: relative;
+        color: $color-title;
+        font-family: $f-hero;
+        text-transform: capitalize;
+        font-weight: 600;
+        font-size: 15px;
+        padding: 1.8rem;
+        span {
+          position: absolute;
+          right: 15px;
+          font-weight: 100;
+          top: 50%;
+          transform: translateY(-50%);
+          font-size: 4rem;
+        }
+      }
+      &:hover {
+        h6 {
+          color: white;
+          span {
+            color: white !important;
+          }
+        }
+      }
+    }
+    &-dsc {
+      max-height: 0;
+      transition: 0.5s all;
+      overflow: hidden;
+      p {
+        padding: 15px;
+      }
+    }
+    &--active {
+      margin-bottom: 0;
+      .faq__card-dsc {
+        max-height: 200px;
+      }
+    }
+    @include reponsive(laptop) {
+      width: 90%;
+    }
+  }
+}

@@ -1,0 +1,221 @@
+.feature {
+  padding: 3rem 0;
+  position: relative;
+  &-partern {
+    position: absolute;
+    right: 0;
+    top: 0; 
+    z-index: -3;
+    width: 80%;
+    height: 100%;
+    background: $color-partern;
+    border-radius: 50% 0 0 0;
+  }
+  &__title {
+    padding-bottom: 3rem;
+    p {
+      padding-top: 2rem;
+    }
+  }
+  &__card {
+    border-radius: 5px;
+    &-theme {
+      position: absolute;
+      z-index: -2;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      transform: scale(0);
+      transition: 0.5s all;
+    }
+    &-partern {
+      position: absolute;
+      z-index: -1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      visibility: hidden;
+      opacity: 0;
+      transition: 0.5s all;
+      animation-name: zoom-fade;
+      animation-duration: 5s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+    &-icon {
+      text-align: center;
+      img {
+        display: inline-block;
+      }
+    }
+    &-title {
+      text-transform: capitalize;
+      font-family: $f-title;
+      color: $color-title;
+      @include font-size(18);
+      transition: 0.5s all;
+      @include reponsive(tablet) {
+        @include font-size(20);
+      }
+    }
+    &-dsc {
+      color: var(--paragraph);
+      transition: 0.5s all;
+    }
+    &--style1 {
+      padding: 4rem 0;
+      position: relative;
+      border-radius: 5px;
+      margin-bottom: 15px;
+      overflow: hidden;
+      .feature__card-title {
+        position: relative;
+        z-index: 1;
+        padding-top: 3rem;
+        padding-bottom: 2rem;
+        text-align: center;
+      }
+      .feature__card-dsc {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+      }
+      &:hover {
+        .feature__card-partern {
+          visibility: visible;
+          opacity: 0.5;
+        }
+        .feature__card-title {
+          color: white;
+        }
+        .feature__card-dsc {
+          color: white;
+        }
+      }
+    }
+    &--style2 {
+      @include flex-box(flex, flex-start, center);
+      .feature__card-icon {
+        position: relative;
+        box-shadow: $shadow-card;
+        margin-top: 5px;
+        border-radius: 50%;
+        width: 7rem;
+        height: 7rem;
+        text-align: center;
+        border-width: 1px;
+        text-align: center;
+        @include flex-box(flex, center, center);
+        span {
+          &::before {
+            font-size: 3rem;
+          }
+        }
+        .icon__border-animation {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          border: 1.5px dashed #000;
+          border-radius: 50%;
+          animation: rotate 3s linear infinite;
+          transition: 0.5s;
+          transition-delay: 0.5s;
+          visibility: hidden;
+          opacity: 0;
+        }
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .feature__card-text {
+        margin-left: 15px;
+        flex-basis: 70%;
+        .feature__card-title {
+          font-family: $f-hero;
+          padding-bottom: 15px;
+        }
+      }
+      &:hover {
+        .feature__card-icon {
+          .icon__border-animation {
+            visibility: visible;
+            opacity: 1;
+          }
+        }
+      }
+    }
+    &--style3 {
+      padding: 4rem;
+      position: relative;
+      text-align: center;
+      overflow: hidden;
+      .feature__card-text {
+        h3 {
+          padding: 15px 0;
+          font-family: $f-hero;
+        }
+      }
+      .feature__card-icon {
+        position: relative;
+        z-index: 1;
+        padding: 2rem;
+        background: white;
+        display: inline-block;
+        border-radius: 50%;
+        box-shadow: $shadow-card;
+        span {
+          border-radius: 50%;
+          &::before {
+            font-size: 3rem;
+          }
+        }
+      }
+      &:hover {
+        .feature__card-partern {
+          visibility: visible;
+          opacity: 0.5;
+        }
+        .feature__card-title {
+          color: white;
+        }
+        .feature__card-dsc {
+          color: white;
+        }
+      }
+    }
+  }
+  &__item {
+    margin-bottom: 3rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    @include reponsive(tablet) {
+      @for $i from 1 through 4 {
+        &:nth-child(#{$i}) {
+          margin-bottom: 3rem;
+        }
+      }
+    }
+    @include reponsive(desktop) {
+      @for $i from 1 through 4 {
+        @if $i == 4 {
+          &:nth-child(#{$i}) {
+            margin-bottom: 0;
+          }
+        }
+        &:nth-child(#{$i}) {
+          margin-bottom: 3rem;
+        }
+      }
+    }
+  }
+}

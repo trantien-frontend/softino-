@@ -1,0 +1,95 @@
+.button {
+  @include font-size(14);
+  letter-spacing: 2px;
+  font-weight: weight(5);
+  display: inline-block;
+  transition: .5s all;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0px 0px 46px -19px rgba(0,0,0,0.76);
+  cursor: pointer;
+  &--style-first {
+    color: white;
+    &:hover {
+      &::before {
+        top: 120%;
+        visibility: hidden;
+        opacity: 0;
+      }
+      span {
+        visibility: visible;
+        opacity: 1;
+        color: white;
+      }
+    }
+  }
+  &--style-second {
+    color: $color-title;
+    background: white;
+    &:hover {
+      &::before {
+        top: 120%;
+        visibility: hidden;
+        opacity: 0;
+      }
+      span {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+  &--style-third {
+    color: white;
+    background: black;
+    &:hover {
+      &::before {
+        top: 120%;
+        visibility: hidden;
+        opacity: 0;
+      }
+      span {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+  &--square {
+    padding: 10px 2.5rem;
+    border-radius: 10px;
+  }
+  &--circle {
+    border-radius: 30px;
+    padding: 12px 2.5rem;
+  }
+  &::before {
+    content: attr(data-text);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.5s all;
+  }
+  span {
+    visibility: hidden;
+    opacity: 0;
+    color: $color-title;
+    @for $span from 1 through 11 {
+      &:nth-child(#{$span}) {
+        transition: 0.05s;
+        transition-delay:$span * 0.035s; ;
+      }
+    }
+  }
+  &:hover {
+      transform:translatey(-3px);
+      &::before {
+        top: 120%;
+        visibility: hidden;
+        opacity: 0;
+      }
+      span {
+        visibility: visible;
+        opacity: 1;
+      }
+  }
+}

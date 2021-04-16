@@ -1,0 +1,25 @@
+mixin counter(page)
+    -const blockCount = [{'number':'2304','title':'project done'},{'number':'3585','title':'success rate'},{'number':'1365','title':'adwards'}, {'number':'4328','title':'happy client'}]
+    if page == 'index'
+        .counter 
+            .counter-bg
+            .container 
+                .row 
+                    each item in blockCount 
+                        div(class="col-lg-3 col-12 col-md-6")
+                            div(class="counter__element counter__element--style1 ")
+                                .count-desc 
+                                    span(class="count-number text-theme" data-number=item.number) 0
+                                    span(class="count-plus") + 
+                                    h5=item.title
+    if page == 'services' || page == 'about us'
+        .counter 
+            .container 
+                .row 
+                    each item in blockCount 
+                        div(class="col-lg-3 col-12 col-md-6")
+                            div(class="counter__element counter__element--style1 ")
+                                .count-desc 
+                                    span(class="count-number text-theme" data-number=item.number) 0
+                                    span(class="count-plus") + 
+                                    h5=item.title

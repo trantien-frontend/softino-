@@ -1,0 +1,29 @@
+.spinner {
+  position: absolute;
+  width: 20rem;
+  height: 20rem;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 100%;
+    height: 100%;
+    background: #60f691;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    animation: spinner 1.5s ease-in-out 0.2s infinite;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 50%;
+    height: 50%;
+    background: #0cca4a;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    animation: spinner 1.5s ease-in-out infinite;
+  }
+}

@@ -1,0 +1,108 @@
+.color-theme {
+  color: #ff512f;
+}
+.theme {
+  position: fixed;
+  z-index: 100;
+  right: -250px;
+  top: 30%;
+  background: white;
+  box-shadow: $shadow;
+  width: 250px;
+  padding: 2rem;
+  box-shadow: 0 0px 30px rgba(0, 0, 0, .3);
+  transition: 0.5s all;
+  &-btn {
+    position: absolute;
+    right: 100%;
+    top: 0%;
+    width: 40px;
+    height: 40px;
+    background: #000;
+    border-radius: 5px 0px 0px 5px;
+    cursor: pointer;
+    @include flex-box(flex, center, center);
+    span {
+      color: white;
+      font-size: 2rem;
+      animation-name: fa-spin;
+      animation-duration: 2s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+  }
+  &__content {
+    &-title {
+      @include font-size(18, normal, 18);
+      font-weight: weight(8);
+      font-family: $f-title;
+      text-transform: capitalize;
+      text-align: center;
+      @include reponsive(tablet) {
+        @include font-size(20, normal, 20);
+      }
+      @include reponsive(laptop) {
+        @include font-size(22, normal, 22);
+      }
+      @include reponsive(desktop) {
+        @include font-size(24, normal, 24);
+      }
+    }
+    h4 {
+      @include font-size(18, normal, 48);
+      font-weight: weight(4);
+      font-family: $f-title;
+      text-transform: capitalize;
+      text-align: center;
+      @include reponsive(tablet) {
+        @include font-size(20, normal, 60);
+      }
+      @include reponsive(laptop) {
+        @include font-size(22, normal, 62);
+      }
+      @include reponsive(desktop) {
+        @include font-size(24, normal, 64);
+      }
+    }
+    &-items {
+      @include flex-box(flex, center, space-between);
+      flex-wrap: wrap;
+      padding: 2rem 0;
+      .theme__item {
+        cursor: pointer;
+        flex-basis: 25%;
+        height: 50px;
+        border-radius: 5px;
+        margin: 5px;
+        margin-bottom: 15px;
+      }
+    }
+    &-btn {
+      text-align: center;
+    }
+    .theme-default {
+      background: #2575fc;
+    }
+    .theme-2 {
+      background: #00c9ff;
+    }
+    .theme-3 {
+      background: #ff512f;
+    }
+    .theme-4 {
+      background: #ee1f71;
+    }
+    .theme-5 {
+      background: #05f8a1;
+    }
+    .theme-6 {
+      background: #481ea7;
+    }
+    .selected {
+      box-shadow: $shadow;
+    }
+  }
+  &-show {
+    right: 0;
+  }
+}

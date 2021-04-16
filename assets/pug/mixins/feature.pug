@@ -1,0 +1,104 @@
+mixin feature(page)
+    -let featureCol = ['feature__item','col-12','col-md-6','col-lg-4']
+    -let featureObj2 = [{'icon':'flaticon-software','title':'design'},{'icon':'flaticon-scroll','title':'Drag And Drop'},{'icon':'flaticon-laptop','title':'High Resolution'},{'icon':'flaticon-goal','title':'App Integration'},{'icon':'flaticon-laptop','title':'Marketing'},{'icon':'flaticon-support','title':'Helping Support'},]
+    if page == 'index' 
+        .feature
+            .container
+                .row
+                    -const featureCard = ['feature__item','col-lg-4','col-md-6','col-12']
+                        div(class=featureCard)
+                            div(class="feature__card feature__card--style1")
+                                div(class="feature__card-theme")
+                                .feature__card-partern
+                                    img(src="./images/card-partern.png", alt="")
+                                .feature__card-icon
+                                    img(src="./images/feature-1.png", alt="")
+                                h3.feature__card-title design
+                                p.feature__card-dsc Top quality Software services, labore et dolore magna ali qua Lorem ipsum dolor sit amet.
+                        div(class=featureCard)
+                            div(class="feature__card feature__card--style1")
+                                div(class="feature__card-theme")
+                                .feature__card-partern
+                                    img(src="./images/card-partern.png", alt="")
+                                .feature__card-icon
+                                    img(src="./images/feature-2.png", alt="")
+                                h3.feature__card-title drag and drop
+                                p.feature__card-dsc Top quality Software services, labore et dolore magna ali qua Lorem ipsum dolor sit amet.
+                        div(class=featureCard)
+                            div(class="feature__card feature__card--style1")
+                                div(class="feature__card-theme")
+                                .feature__card-partern
+                                    img(src="./images/card-partern.png", alt="")
+                                .feature__card-icon
+                                    img(src="./images/feature-3.png", alt="")
+                                h3.feature__card-title high resolution
+                                p.feature__card-dsc Top quality Software services, labore et dolore magna ali qua Lorem ipsum dolor sit amet.
+                        div(class=featureCard)
+                            div(class="feature__card feature__card--style1")
+                                div(class="feature__card-theme")
+                                .feature__card-partern
+                                    img(src="./images/card-partern.png", alt="")
+                                .feature__card-icon
+                                    img(src="./images/feature-4.png", alt="")
+                                h3.feature__card-title App Integration
+                                p.feature__card-dsc Top quality Software services, labore et dolore magna ali qua Lorem ipsum dolor sit amet.
+                        div(class=featureCard)
+                            div(class="feature__card feature__card--style1")
+                                div(class="feature__card-theme")
+                                .feature__card-partern
+                                    img(src="./images/card-partern.png", alt="")
+                                .feature__card-icon
+                                    img(src="./images/feature-5.png", alt="")
+                                h3.feature__card-title Marketing
+                                p.feature__card-dsc Top quality Software services, labore et dolore magna ali qua Lorem ipsum dolor sit amet.
+                        div(class=featureCard)
+                            div(class="feature__card feature__card--style1")
+                                div(class="feature__card-theme")
+                                .feature__card-partern
+                                    img(src="./images/card-partern.png", alt="")
+                                .feature__card-icon
+                                    img(src="./images/feature-6.png", alt="")
+                                h3.feature__card-title Helping Support
+                                p.feature__card-dsc Top quality Software services, labore et dolore magna ali qua Lorem ipsum dolor sit amet.
+    if page == 'services'
+        div(class='feature')
+            .container 
+                div(class="row row-justyfy") 
+                    div(class="col-lg-8")
+                        div(class="feature__title section-align")
+                            .title-effect
+                                div(class="eclipse bg-theme")
+                                span(class="flaticon-sugar-cubes")
+                            h3(class="section-title section-title--style-1") Our Exciting Feature And Service 
+                            p(class='dsc-title') Softino Ut enim ad minim veniam, quis
+                                | nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
+                                | commodo consequat. Duis aute irure dolor in reprehenderi
+                div(class="row")
+                        each item in featureObj2 
+                            div(class=featureCol)
+                                div(class="feature__card feature__card--style2")
+                                    .feature__card-icon
+                                        span(class=`${item.icon} text-theme`)
+                                        .icon__border-animation
+                                    .feature__card-text 
+                                        h3.feature__card-title=item.title
+                                        p.feature__card-dsc Top quality Software services, labore et dolore magna ali qua Lorem ipsum dolor sit amet.
+    if page == 'about us'
+        div(class="feature")
+            .feature-partern
+            .container 
+                .row 
+                    each item in featureObj2 
+                            div(class=featureCol)
+                                div(class="feature__card feature__card--style3")
+                                    div(class="feature__card-theme")
+                                    .feature__card-partern
+                                        img(src="./images/card-partern.png", alt="")
+                                    .feature__card-icon
+                                        span(class=`${item.icon} text-theme`)
+                                        .icon__border-animation
+                                    .feature__card-text 
+                                        h3.feature__card-title=item.title
+                                        p.feature__card-dsc Top quality Software services, labore et dolore magna ali qua Lorem ipsum dolor sit amet.
+
+

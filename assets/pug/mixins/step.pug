@@ -1,0 +1,37 @@
+include ./dots.pug
+mixin step(page) 
+    if page == 'index'
+        .step
+            .step__partern
+                img(src="./images/step-partern.png", alt="")
+            .container
+                h3(class="step__title section-title col-lg-6") Three Simple Step To Started Working Process
+                .row 
+                    -const stepCol = ['col-lg-4','col-md-6','col-12']
+                    div(class=stepCol)
+                        .step__item
+                            .step__item-icon 
+                                span(class="far fa-lightbulb")
+                                div(class="number text-theme") 01
+                            h3(class="step__item-title text-theme") Research Project    
+                            p(class="step__item-dsc dsc") Nostrud exercitat ullamco lorem ipsum dolor sit amet, consece adipising elit, sed doeo eiusmod
+                    div(class=stepCol)
+                        .step__item
+                            .step__item-animation 
+                                span(class="bg-theme")
+                                span(class="bg-theme")
+                                span(class="bg-theme")
+                            .step__item-icon 
+                                span(class="fas fa-rocket")
+                                div(class="number text-theme") 02
+                                +box-loader
+                            h3(class="step__item-title text-theme") Research Project    
+                            p(class="step__item-dsc dsc") Nostrud exercitat ullamco lorem ipsum dolor sit amet, consece adipising elit, sed doeo eiusmod
+                    div(class=stepCol)
+                        .step__item
+                            .step__item-icon 
+                                span(class="far fa-check-square")
+                                div(class="number text-theme") 03
+                                +box-loader
+                            h3(class="step__item-title text-theme") Research Project    
+                            p(class="step__item-dsc dsc") Nostrud exercitat ullamco lorem ipsum dolor sit amet, consece adipising elit, sed doeo eiusmod

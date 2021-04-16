@@ -1,0 +1,130 @@
+mixin team(page)
+    -let team = [{"img":"./images/team-01.jpg","office":"manager","name":"jemy lusto"},{"img":"./images/team-02.jpg","office":"manager","name":"jemy lusto"},{"img":"./images/team-03.jpg","office":"manager","name":"jemy lusto"},{"img":"./images/team-04.jpg","office":"manager","name":"jemy lusto"}]
+    if page == 'index'
+        div(class="team team--style-1")
+            .container 
+                div(class="row row-justyfy")
+                    div(class="col-lg-8")
+                        h3(class="section-title")  Meet Our Expert 
+                            span(class="text-theme") Team Member
+                            | Will Ready For Your Service 
+                .row 
+                    div(class="col-lg-12 col-md-12")
+                        div(class="team--style-1__slide owl-carousel")
+                            each user in team 
+                                div(class="card-team card-team--style-1")     
+                                    .card-team__item
+                                        .item-img  
+                                            img(src=user.img, alt="")
+                                            a(href="#" class="item-img__link")
+                                                span(class="fas fa-external-link-alt")
+                                        .item-dsc
+                                            h5(class="item-office")=user.office
+                                            h4(class="item-name text-theme")=user.name
+                                            ul(class="item-socials")
+                                                li(class="item-socials__item item-socials__item--blue-first")
+                                                    a(href="#")
+                                                        span(class="fab fa-facebook-f")
+                                                li(class="item-socials__item item-socials__item--blue-second")
+                                                    a(href="#")
+                                                        span(class="fab fa-twitter")
+                                                li(class="item-socials__item item-socials__item--red")
+                                                    a(href="#")
+                                                        span(class="fab fa-google-plus-g")
+                                                li(class="item-socials__item item-socials__item--blue-third")
+                                                    a(href="#")
+                                                        span(class="fab fa-linkedin-in")
+                                            div(class="item-before bg-theme")
+                                            div(class="item-after bg-theme")
+    if page == 'services'
+        div(class="team team--style-2")
+            .team-partern 
+                img(src="./images/wave-shape.png", alt="")
+            .container-fluid
+                .team-container 
+                    div(class="row row-align")
+                        div(class="col-lg-5 col-md-12 col-12")
+                            div(class="team-title")
+                                div(class="title-effect")
+                                    div(class="eclipse bg-theme")
+                                    span(class="flaticon-group")
+                                h3(class="section-title section-title--style-1")
+                                    | Meet Our Expert Team Member Will Ready For Your Service
+                                p(class="dsc-title") Leverage agile 
+                                    |frameworks to provide a robust 
+                                    |synopsis for high level
+                                .team-title__button 
+                                    a(href="#" class="button button--circle button--style-second" data-text="ViewAll")
+                                        span V
+                                        span i
+                                        span e
+                                        span w
+                                        span A
+                                        span l
+                                        span l
+                        div(class="col-lg-7 col-md-12")
+                            div(class="team--style-2__slide owl-carousel")
+                                each user in team 
+                                    div(class="card-team card-team--style-2")
+                                        .card-team__item
+                                            .item-img  
+                                                img(src=user.img, alt="")
+                                                a(href="#" class="item-img__link")
+                                                    span(class="fas fa-external-link-alt")
+                                            .item-dsc
+                                                h5(class="item-office")=user.office
+                                                h4(class="item-name text-theme")=user.name
+                                                ul(class="item-socials")
+                                                    li(class="item-socials__item item-socials__item--blue-first")
+                                                        a(href="#")
+                                                            span(class="fab fa-facebook-f")
+                                                    li(class="item-socials__item item-socials__item--blue-second")
+                                                        a(href="#")
+                                                            span(class="fab fa-twitter")
+                                                    li(class="item-socials__item item-socials__item--red")
+                                                        a(href="#")
+                                                            span(class="fab fa-google-plus-g")
+                                                    li(class="item-socials__item item-socials__item--blue-third")
+                                                        a(href="#")
+                                                            span(class="fab fa-linkedin-in")
+    if page == 'about us'
+        div(class="team team--style-3")
+            div(class="team-partern button-theme")
+                img(src="./images/team-partern.jpg", alt="")
+                .container 
+                    .row 
+                        div(class="col-lg-8 col-md-12 col-12")
+                            .team-title 
+                                .title-effect 
+                                    div(class="eclipse")
+                                    span(class="flaticon-info text-theme")
+                                h3(class="section-title section-title--style-1")
+                                    | Meet Our Expert Team Member Will Ready For Your Service
+            .row 
+                div(class="team-slides--style-3 col-lg-10 col-md-12")
+                    div(class="team--style-1__slide owl-carousel")
+                        each user in team 
+                            div(class="card-team card-team--style-1")     
+                                .card-team__item
+                                    .item-img  
+                                        img(src=user.img, alt="")
+                                        a(href="#" class="item-img__link")
+                                                    span(class="fas fa-external-link-alt")
+                                    .item-dsc
+                                        h5(class="item-office")=user.office
+                                        h4(class="item-name text-theme")=user.name
+                                        ul(class="item-socials")
+                                            li(class="item-socials__item item-socials__item--blue-first")
+                                                a(href="#")
+                                                    span(class="fab fa-facebook-f")
+                                            li(class="item-socials__item item-socials__item--blue-second")
+                                                a(href="#")
+                                                    span(class="fab fa-twitter")
+                                            li(class="item-socials__item item-socials__item--red")
+                                                a(href="#")
+                                                    span(class="fab fa-google-plus-g")
+                                            li(class="item-socials__item item-socials__item--blue-third")
+                                                a(href="#")
+                                                    span(class="fab fa-linkedin-in")
+                                        div(class="item-before bg-theme")
+                                        div(class="item-after bg-theme")

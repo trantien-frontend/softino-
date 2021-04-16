@@ -1,0 +1,97 @@
+include ./mixins/mixin.pug
+include ./mixins/JS-CSS.pug
+include ./mixins/theme.pug
+include ./mixins/hero.pug
+include ./mixins/feature.pug
+include ./mixins/counter.pug
+include ./mixins/team.pug
+include ./mixins/price.pug
+include ./mixins/testimonial.pug
+include ./mixins/blog.pug
+include ./mixins/footer.pug
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Sofino
+        link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css")
+        link(rel="preconnect" href="https://fonts.gstatic.com")
+        link(href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800&family=Titillium+Web:wght@300;400;600;700;900&display=swap" rel="stylesheet")
+        link(href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet")
+        link(rel="shortcut icon" href="./images/imageURL.ico")
+        +block-css
+    body 
+        -let page = 'about us'
+        .wrapper 
+            +theme-section(page)
+            include ./component/loading.pug
+            include ./component/overlay.pug
+            include ./component/scroll-top.pug
+            .head 
+                div(class="nav nav--style-1") 
+                    .container-fluid
+                        div(class="nav-container")
+                            .nav-container__logo
+                                a(href="#" class="logo")
+                                    img(src="./images/logo-theme-3.png", class="theme-logo" alt="")
+                            +nav-menu(page)
+                            .nav-container__button
+                                a(href='#' class="button button-theme button--square button--style-first" data-text="Login")
+                                    span L
+                                    span o
+                                    span g
+                                    span i
+                                    span n
+                            .nav-container__bars
+                                div(class="bar bg-theme bar--top")
+                                div(class="bar bg-theme bar--center")
+                                div(class="bar bg-theme bar--bottom")
+                +hero(page)
+            .main 
+                .page-about 
+                    div(class="container")
+                        div(class='row row-align')
+                            -let pageAboutCol = ['col-lg-6','col-md-12','col-12']
+                            div(class=pageAboutCol)
+                                .page-about__item 
+                                    img(src="./images/page-about.png", alt="page-about-img")
+                            div(class=pageAboutCol)
+                                .page-about__item 
+                                    .title-effect 
+                                        div(class="eclipse bg-theme")
+                                        span(class="flaticon-info")
+                                    h3(class="section-title section-title--style-1") We're Building Modern And High Software
+                                    p(class="dsc-title") Deos et accusamus et iusto odio 
+                                        | dignissimos qui 
+                                        | blanditiis praesentium voluptatum dele corrupti
+                                        | quos dolores et quas molestias a orci facilisis rutrum.
+                                    .page-about__button 
+                                        a(class="button button--circle button--style-first button-theme" data-text="SeeAbout")
+                                            span S
+                                            span e
+                                            span e
+                                            span A
+                                            span b
+                                            span o
+                                            span u
+                                            span t
+                                        a(class="button button--circle button--style-third hover-theme-bg" data-text="LearnMore")
+                                            span L
+                                            span e
+                                            span a
+                                            span r
+                                            span n
+                                            span M
+                                            span o
+                                            span r
+                                            span e
+                +feature(page)  
+                +counter(page)      
+                include ./layout/faq.pug
+                +team(page)
+                +price-section(page)
+                +testimonial(page)
+                +blog(page)
+                +footer(page)
+        +block-js

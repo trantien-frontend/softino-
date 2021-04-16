@@ -1,0 +1,41 @@
+include ./line.pug
+-let testimonial = [{'img':'./images/testimonial-01.jpg','office':'CEO of softino','name':'lana roadse'},{'img':'./images/testimonial-02.jpg','office':'CEO of softino','name':'lana roadse'},{'img':'./images/testimonial-03.jpg','office':'CEO of softino','name':'lana roadse'}]
+mixin testimonial(page)
+        div(class="testimonial testimonial--first")
+            div(class="testimonial-bg")
+                if page == 'index'
+                    img(src="./images/partern-01.png", alt="")
+                if page == 'about us'
+                    img(src="./images/testimonial-about.png", alt="")
+            div(class="container")
+                if page == 'index'
+                    div(class='row row-justyfy')
+                        div(class="col-lg-8 col-12")
+                            h3(class='testimonial__title section-title') You Can See Our testimonials Feedback 
+                                span(class='text-theme') What You Say? 
+                div(class='row row-align')
+                    div(class="col-lg-3 col-md-4 col-12 order-lg-1 order-md-1 order-2")
+                        div(class="testimonial-nav")
+                            div(class="testimonial-nav__button bg-theme testimonial-nav__button--active")
+                                img(src='./images/testimonial-01.jpg' alt="user")
+                            div(class="testimonial-nav__button bg-theme")
+                                img(src='./images/testimonial-02.jpg' alt="user")
+                            div(class="testimonial-nav__button bg-theme")
+                                img(src='./images/testimonial-03.jpg' alt="user")
+                    div(class="col-lg-9 col-md-8 col-12 order-lg-2 order-lg-2 order-1")
+                        div(class="testimonial-slide")
+                            each user in testimonial 
+                                div(class="testimonial-slide__item col-lg-12 col-md-12 col-12")
+                                    div(class="row row-align") 
+                                        div(class="col-lg-4 col-12")
+                                            .testimonial__item-img 
+                                                img(src=user.img, alt="")
+                                        div(class="col-lg-8 col-12")
+                                            .testimonial__item-text
+                                                span(class=" flaticon-quote text-theme")
+                                                p(class="item-text__dsc") Consectetur Recommended Professional and great experience, Nam pulvinar vitae neque et porttitor, Praesent sed nisi eleifend, adipisicing elitelit, sed do eiusmodas temporo incididunt Praesent sed nisi eleifend, Consectetur adipisicing elit
+                                                div(class="item-text__info")
+                                                    +line
+                                                    h4(class="text-theme") lana roadse
+                                                    h5(class="dsc") CEO of Sofino
+        

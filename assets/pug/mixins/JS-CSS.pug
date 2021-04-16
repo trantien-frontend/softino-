@@ -1,0 +1,16 @@
+mixin block-css 
+    //build:css css/styles.min.css
+    link(rel="stylesheet", href="./css/style.css")
+    link(rel="stylesheet", href="./css/grid.css")
+    link(rel="stylesheet", href="./css/animate.css")
+    link(rel="stylesheet", href="./css/owl.carousel.css")
+    link(rel="stylesheet", href="./css/owl.theme.default.css")
+    //endbuild
+    link(rel="stylesheet", href="./flaticon/flaticon.css")
+mixin block-js 
+    script(src="./vendor/jquery/jquery-3.5.1.js")
+    script(src="./vendor/owl-carousel/owl.carousel.min.js")
+    script(src="./vendor/wow/wow.min.js")
+    //build:js js/main.min.js
+    script(src="./js/main.js")
+    //endbuild

@@ -1,0 +1,36 @@
+.section-title {
+    @include font-size(28,36,normal);
+    font-weight: weight(6);
+    font-family: $f-title;
+    color: $color-title;
+    text-align: center;
+    @include reponsive(tablet) {
+        @include font-size(30,40,normal);
+    }
+    @include reponsive(laptop) {
+        @include font-size(34,44,normal);
+    }
+    @include reponsive(desktop) {
+        @include font-size(40,46,normal);
+    }
+    &--style-1 {
+        font-family: $f-hero !important;
+        text-transform: capitalize;
+    }
+}
+.dsc-title {
+    color: var(--paragraph);
+    @include font-size(16,27);
+}
+.dsc {
+    color: var(--paragraph);
+    line-height: 2.3rem;
+}
+.section-small-title {
+    font-size: 1.8rem;
+    font-weight: weight(4);
+    text-transform: uppercase;
+    color: $shadow-card;
+    letter-spacing: 2px;
+
+}

@@ -1,0 +1,38 @@
+.counter {
+    position: relative;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  &-bg {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 72%;
+    height: 100%;
+    background: #FAFAFF;
+    border-radius: 50% 0 0 0;
+    @include reponsive(tablet) {
+        width: 75%;
+    }
+  }
+  &__element {
+    &--style1 {
+      .count-desc {
+        margin: 0 auto;
+        .count-number {
+          @include font-size(50);
+          font-weight: weight(7);
+        }
+        .count-plus {
+          @include font-size(30);
+          font-weight: weight(4);
+        }
+        h5 {
+          text-transform: capitalize;
+          @include font-size(20);
+          color: $color-title;
+          font-weight: (5);
+        }
+      }
+    }
+  }
+}

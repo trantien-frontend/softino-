@@ -1,0 +1,201 @@
+include ./hexagon.pug
+mixin price-section(page)
+    -const list = ['15 Analytics Compaign','Unlimited Site licenses','1 Database','10 Free Optimization','Html5 + Css3','24/7 Customer Support']
+    if page == 'index'
+        .price
+            .price-partern
+                .price-partern__img 
+                    img(src="./images/price-partern.png", alt="")
+                .price-partern__bg
+                div(class="container")
+                    div(class="row row-align")
+                        div(class="col-lg-4 col-md-12 col-12")
+                            .price-title 
+                                h3(class="section-title") Choose Your Best Affordable 
+                                    span(class="text-theme") Pricing Plan
+                                p(class="dsc price-title__dsc") Softino Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderi
+                        div(class="col-lg-8 col-md-12 col-12")
+                            div(class='price-tab')
+                                div(class="row row-align")
+                                    div(class="col-lg-6 col-md-6")
+                                        div(class="price-tab__item price-tab__item--white")
+                                            .price-inside starter 
+                                            .price-value
+                                                h3(class="price-value__text price-value__text--default")
+                                                    span $ 
+                                                    | 33
+                                                span(class='dsc') monthly package
+                                            h3(class="price-tab-title text-theme") starter 
+                                            .price-list
+                                                ul.list 
+                                                    each item in list
+                                                        li(class='dsc')=item
+                                            .price-btn
+                                                a(href="#" class="button button--circle button--style-first button-theme" data-text='PurchaseNow')
+                                                    span P
+                                                    span u
+                                                    span c
+                                                    span h
+                                                    span a
+                                                    span s
+                                                    span e
+                                                    span N
+                                                    span o
+                                                    span w
+                                    div(class="col-lg-6 col-md-6")
+                                        div(class="price-tab__item price-tab__item--theme bg-theme")
+                                            .price-inside premium
+                                            .price-value
+                                                h3(class="price-value__text price-value__text--white")
+                                                    span $ 
+                                                    | 55
+                                                span monthly package
+                                            h3.price-tab-title starter 
+                                            .price-list
+                                                ul.list 
+                                                    each item in list
+                                                        li(class='dsc')=item
+                                            .price-btn
+                                                a(href="#" class="button button--circle button--style-second " data-text='PurchaseNow')
+                                                    span P
+                                                    span u
+                                                    span c
+                                                    span h
+                                                    span a
+                                                    span s
+                                                    span e
+                                                    span N
+                                                    span o
+                                                    span w
+    if page == 'services'
+        div(class="price price--style-2") 
+            +hexagon
+            .container 
+                div(class="row row-align")
+                    -let priceCol = ['price-card','col-lg-4','col-md-12','col-12']
+                    -let values = [{'price':'33','inside':'starter'},{'price':'55','inside':'premium'},{'price':'99','inside':'professional'}]
+                        each value in values 
+                            if value.price == '55'
+                                    div(class=priceCol)
+                                        div(class="price-tab__item price-tab__item--active price-tab__item--white")
+                                                    .price-inside= value.inside
+                                                    .price-value
+                                                        h3(class="price-value__text price-value__text--default")
+                                                            span $ 
+                                                            = value.price
+                                                        span(class='dsc') monthly package
+                                                    h3(class="price-tab-title text-theme")= value.inside
+                                                    .price-btn
+                                                        a(href="#" class="button button--circle button--style-first button-theme" data-text='PurchaseNow')
+                                                            span P
+                                                            span u
+                                                            span c
+                                                            span h
+                                                            span a
+                                                            span s
+                                                            span e
+                                                            span N
+                                                            span o
+                                                            span w
+                                                    .price-list
+                                                        ul.list 
+                                                            each item in list
+                                                                li(class='dsc')=item
+                            else 
+                                div(class=priceCol)
+                                        div(class="price-tab__item price-tab__item--white")
+                                                    .price-inside= value.inside
+                                                    .price-value
+                                                        h3(class="price-value__text price-value__text--default")
+                                                            span $ 
+                                                            = value.price
+                                                        span(class='dsc') monthly package
+                                                    h3(class="price-tab-title text-theme")= value.inside
+                                                    .price-list
+                                                        ul.list 
+                                                            each item in list
+                                                                li(class='dsc')=item
+                                                    .price-btn
+                                                        a(href="#" class="button button--circle button--style-first button-theme" data-text='PurchaseNow')
+                                                            span P
+                                                            span u
+                                                            span c
+                                                            span h
+                                                            span a
+                                                            span s
+                                                            span e
+                                                            span N
+                                                            span o
+                                                            span w
+    if page == 'about us'
+        div(class="price price--style-3") 
+            +hexagon
+            .container 
+                div(class="row row-justyfy")
+                    div(class="col-lg-7 col-md-12 col-12")
+                        .price-title    
+                            h4(class="section-small-title") PRICING PLAN
+                            h3(class="section-title section-title--style-1") Choose Your Best Affordable 
+                            p(class="dsc price-title__dsc") Softino Ut enim ad minim veniam,
+                                |quis nostrud exercitation ullamco laboris nisi ut 
+                                |aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderi
+                div(class="row row-align")
+                    -let priceCol = ['price-card','col-lg-4','col-md-12','col-12']
+                    -let values = [{'price':'33','inside':'starter'},{'price':'55','inside':'premium'},{'price':'99','inside':'professional'}]
+                        each value in values 
+                            if value.price == '55'
+                                    div(class=priceCol)
+                                        div(class="price-tab__item price-tab__item--theme bg-theme")
+                                                    .price-inside= value.inside
+                                                    .price-value
+                                                        h3(class="price-value__text price-value__text--white")
+                                                            span $ 
+                                                            = value.price
+                                                        span(class='dsc') monthly package
+                                                    h3(class="price-tab-title")= value.inside
+                                                    .price-list
+                                                        ul.list 
+                                                            each item in list
+                                                                li(class='dsc')=item
+                                                    .price-btn
+                                                        a(href="#" class="button button--circle button--style-second" data-text='PurchaseNow')
+                                                            span P
+                                                            span u
+                                                            span c
+                                                            span h
+                                                            span a
+                                                            span s
+                                                            span e
+                                                            span N
+                                                            span o
+                                                            span w
+                            else 
+                                div(class=priceCol)
+                                        div(class="price-tab__item price-tab__item--white")
+                                                    .price-inside= value.inside
+                                                    .price-value
+                                                        h3(class="price-value__text price-value__text--default")
+                                                            span $ 
+                                                            = value.price
+                                                        span(class='dsc') monthly package
+                                                    h3(class="price-tab-title text-theme")= value.inside
+                                                    .price-list
+                                                        ul.list 
+                                                            each item in list
+                                                                li(class='dsc')=item
+                                                    .price-btn
+                                                        a(href="#" class="button button--circle button--style-first button-theme" data-text='PurchaseNow')
+                                                            span P
+                                                            span u
+                                                            span c
+                                                            span h
+                                                            span a
+                                                            span s
+                                                            span e
+                                                            span N
+                                                            span o
+                                                            span w
+
+        
+
+

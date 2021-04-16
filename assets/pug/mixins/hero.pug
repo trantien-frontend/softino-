@@ -1,0 +1,34 @@
+mixin hero(page)
+    -let heroCol = ['col-lg-6','col-md-12','col-12']
+    .hero
+        .hero-partern
+        .hero-animation
+        .container
+            div(class="row row-align")
+                div(class=heroCol)
+                    .hero__item
+                        if page == 'services'
+                            h3(class="hero__item-title") 
+                                span(class="text-theme") s
+                                | ervices
+                        if page == 'about us'
+                            h3(class="hero__item-title") 
+                                span(class="text-theme") a
+                                | bout us
+                        p(class="dsc") we're building modern and high software
+                div(class=heroCol)
+                    -let services = ['home',`${page}`,`${page}`]
+                    .hero__item 
+                            div(class="page-breadcrumb")
+                                ul(class="breadcrumb")
+                                    each item, index in services 
+                                        if item == 'home'
+                                            li(class="breadcrumb__item hover-theme-text")
+                                                a(href="index.html" class="hover-theme-text")= item 
+                                        else if index == 2 
+                                            li(class="breadcrumb__item")
+                                                a(href='#' class="text-theme")= item 
+                                        else 
+                                            li(class='breadcrumb__item ')
+                                                a(href="#" class="hover-theme-text")= item
+                

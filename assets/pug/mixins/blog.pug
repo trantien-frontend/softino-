@@ -1,0 +1,114 @@
+include ./line.pug
+mixin blog(page)
+        if page == 'index'
+            .blog
+                .spinner
+                .container
+                    div(class="row row-justyfy")
+                        div(class="col-lg-7")
+                            .blog__title 
+                                h3(class="section-title") Have A Look Creative 
+                                    span(class="color-theme") Blogs
+                                p(class="dsc") Softino Ut enim ad minim veniam, 
+                                    |quis nostrud exercitation ullamco laboris nisi 
+                                    |ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderi
+                    div(class="row")
+                        -let blogCard = [{'img':'./images/blog-1.jpg','title':'softiono performance based software'},{'img':'./images/blog-2.jpg','title':'lasted software design in features'}]
+                        each item in blogCard 
+                            div(class="col-lg-4 col-md-6 col-12")
+                                .blog__item
+                                    div(class='blog__item-img bg-theme')
+                                        img(src=item.img, alt="")
+                                        a(href="#") photo
+                                    .blog__item-dsc
+                                        .blog-meta 
+                                            ul(class="list-meta")
+                                                li(class="dsc") 
+                                                    span(class="far fa-calendar-alt text-theme")
+                                                    |23 jan, 2019
+                                                li(class="dsc") 
+                                                    span(class="far fa-user text-theme")
+                                                    |by themeHt
+                                        a(class="blog-link hover-theme-text" href='#' )= item.title
+                                            +line
+                        div(class="col-lg-4 col-md-12 col-12")
+                                .blog__item
+                                    -const posts = [{'img':'./images/blog-3.jpg','title':'Softino Performance Based Software'},{'img':'./images/blog-4.jpg','title':'latest Software design in features'},{'img':'./images/blog-5.jpg','title':'All Powerful Design feature In Softino'}]
+                                        div(class="blog__item-post")
+                                            each post in posts 
+                                                div(class="post-thumb")
+                                                    div(class="row row-align") 
+                                                        div(class="col-lg-5 col-md-3 col-4")
+                                                            div(class="post-thumb__img")
+                                                                img(src=post.img, alt="")    
+                                                        div(class='col-lg-7 col-md-9 col-8')
+                                                            div(class="post-thumb__dsc")
+                                                                h4(class='dsc') by themeHt
+                                                                a(href="#" class="hover-theme-text")=post.title
+        if page == 'services'
+            div(class="blog blog--style-2")
+                .container 
+                    div(class="row row-justyfy")
+                        div(class="col-lg-7")
+                            .blog__title 
+                                .title-effect
+                                    div(class="eclipse bg-theme")
+                                    span(class="flaticon-bitcoin-logo")
+                                h3(class="section-title section-title--style-1") our lastest news
+                                p(class="dsc-title") Softino Ut enim ad minim veniam, quis nostrud exercitation 
+                                    |ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                                    |Duis aute irure dolor in reprehenderi
+                    div(class="row")
+                        -let blogCard = [{'img':'./images/blog-1.jpg','title':'softiono performance based software'},{'img':'./images/blog-2.jpg','title':'lasted software design in features'},{'img':'./images/blog-6.jpg','title':'all powerful design feature in softino'}]
+                            each item in blogCard 
+                                div(class="blog-card col-lg-4 col-md-6 col-12")
+                                    div(class="blog__item blog__item--style-2")
+                                        div(class='blog__item-img bg-theme')
+                                            img(src=item.img, alt="")
+                                            //- a(href="#") photo
+                                        .blog__item-dsc
+                                            .blog-meta 
+                                                ul(class="list-meta")
+                                                    li(class="dsc") 
+                                                        span(class="far fa-calendar-alt text-theme")
+                                                        |23 jan, 2019
+                                                    li(class="dsc") 
+                                                        span(class="far fa-user text-theme")
+                                                        |by themeHt
+                                            a(class="blog-link hover-theme-text" href='#' )= item.title
+                                                +line
+        if page == 'about us'
+            div(class="blog blog--style-3")
+                .container 
+                    div(class="row")
+                        div(class="col-lg-9")
+                            .blog__title 
+                                .title-effect
+                                    div(class="eclipse bg-theme")
+                                    span(class="flaticon-bitcoin-logo")
+                                h3(class="section-title section-title--style-1") Creative Blogs
+                                p(class="dsc-title") Softino Ut enim ad minim veniam, quis nostrud exercitation 
+                                    |ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                                    |Duis aute irure dolor in reprehenderi
+                    div(class="row")
+                        div(class="col-lg-12")
+                            div(class="blog-slide owl-carousel")
+                                -let blogCard = [{'img':'./images/blog-1.jpg','title':'softiono performance based software'},{'img':'./images/blog-2.jpg','title':'lasted software design in features'},{'img':'./images/blog-6.jpg','title':'all powerful design feature in softino'}]
+                                    each item in blogCard 
+                                            div(class="blog__item blog__item--style-3")
+                                                div(class='blog__item-img bg-theme')
+                                                    img(src=item.img, alt="")
+                                                    a(href="#" class="text-theme") photo 
+                                                .blog__item-dsc
+                                                    .blog-meta 
+                                                        ul(class="list-meta")
+                                                            li(class="dsc") 
+                                                                span(class="far fa-calendar-alt text-theme")
+                                                                |23 jan, 2019
+                                                            li(class="dsc") 
+                                                                span(class="far fa-user text-theme")
+                                                                |by themeHt
+                                                    a(class="blog-link hover-theme-text" href='#' )= item.title
+                                                        +line
+                                                    p(class="dsc-title") Consequat dolor sit amet, consectetur adipiscing elit. Maecenas lobortis quam id lectus aliquet euismod. Ut sagittis…
+

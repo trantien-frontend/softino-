@@ -1,0 +1,344 @@
+.nav {
+  padding: 10px 0;
+  background: #fff;
+  &-container {
+    @include flex-box(flex, center, space-between);
+    position: relative;
+    &__logo {
+      width: 37%;
+      @include reponsive(tablet) {
+        width: 20%;
+      }
+      @include reponsive(laptop) {
+        width: 15%;
+      }
+    }
+    &__menu {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 99;
+      top: 100%;
+      width: 100%;
+      background: white;
+      box-shadow: $shadow;
+      max-height: 0;
+      overflow: hidden;
+      transition: 0.5s all;
+      &-item {
+        padding: 5px 15px;
+        &:first-child {
+          margin-top: 10px;
+        }
+        &:last-child {
+          margin-bottom: 10px;
+        }
+      }
+      &-link--active {
+        padding-left: 2.5rem;
+        .dots {
+          visibility: visible !important;
+          opacity: 1 !important;
+          &__dot {
+            &:nth-child(1) {
+              left: 0 !important;
+            }
+            &:nth-child(3) {
+              right: 0 !important;
+            }
+          }
+        }
+      }
+      &-link {
+        position: relative;
+        display: block;
+        text-transform: capitalize;
+        font-weight: weight(5);
+        color: $color-title;
+        transition: 0.5s all;
+        span {
+          position: absolute;
+          right: 0;
+        }
+        &:hover {
+          padding-left: 2.5rem;
+          .dots {
+            visibility: visible;
+            opacity: 1;
+            &__dot {
+              &:nth-child(1) {
+                left: 0;
+              }
+              &:nth-child(3) {
+                right: 0;
+              }
+            }
+          }
+        }
+        .dots {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 20px;
+          display: inline-block;
+          height: 100%;
+          @include flex-box(flex, center, center);
+          transition: 0.5s all;
+          visibility: hidden;
+          opacity: 0;
+          animation: fade 1s ease-in-out infinite;
+          &__dot {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: $color-title;
+            transition: 0.5s;
+            transition-delay: 0.2s;
+            display: inline-block;
+            &:nth-child(1) {
+              left: 32%;
+            }
+            &:nth-child(2) {
+              left: 50%;
+              transform: translatex(-50%);
+            }
+            &:nth-child(3) {
+              right: 30%;
+            }
+          }
+        }
+      }
+      @include reponsive(laptop) {
+        all: unset;
+        @include flex-box(flex, center, center);
+        &-item {
+          position: relative;
+          list-style: none;
+          &:last-child,
+          &:first-child {
+            margin: 0;
+          }
+          &:hover {
+            .sub-menu {
+              opacity: 1;
+              visibility: visible;
+            }
+          }
+        }
+        &-link--active {
+          padding-left: 0;
+        }
+        &-link {
+          font-weight: weight(4);
+          .dots {
+            left: 50%;
+            transform: translatex(-50%);
+            top: 50%;
+          }
+          &:hover {
+            padding-left: 0;
+          }
+          span {
+            position: static !important;
+            padding-left: 3px;
+            display: inline-block;
+          }
+        }
+      }
+    }
+    .sub-menu {
+      box-shadow: $shadow;
+      border-radius: 5px;
+      max-height: 0;
+      transition: 0.5s all;
+      overflow: hidden;
+      li {
+        display: block;
+        padding: 0 15px;
+        a {
+          @extend .nav-container__menu-link;
+          padding: 10px 0;
+          font-weight: weight(4);
+          &:hover {
+            padding-left: 2.5rem;
+          }
+        }
+      }
+      .dots {
+        left: 0 !important;
+        top: 50% !important;
+        transform: translatey(-50%) !important;
+        &__dot {
+          padding: 0;
+        }
+      }
+      @include reponsive(laptop) {
+        all: unset;
+        position: absolute;
+        width: max-content;
+        z-index: 99;
+        background: white;
+        box-shadow: $shadow;
+        border-radius: 10px;
+        left: 0;
+        top: 100%;
+        visibility: hidden;
+        opacity: 0;
+        transition: 0.1s all;
+        li {
+          position: relative;
+          a {
+            padding-right: 3rem;
+          }
+          &:hover {
+            .sub-menu__inner {
+              visibility: visible;
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+    .sub-menu__inner {
+      box-shadow: $shadow;
+      border-radius: 5px;
+      max-height: 0;
+      transition: 0.5s all;
+      overflow: hidden;
+      @include reponsive(laptop) {
+        all: unset;
+        position: absolute;
+        left: 105%;
+        top: 0;
+        box-shadow: $shadow;
+        width: 180px;
+        background: #fff;
+        border-radius: 10px;
+        visibility: hidden;
+        transition: 0.5s all;
+        opacity: 0;
+      }
+    }
+    @media only screen and (max-width: 991px) {
+      .show-menu {
+        max-height: 500px;
+        overflow-y: scroll;
+      }
+      .show-sub-menu {
+        max-height: 300px;
+      }
+    }
+    &__button {
+      display: none;
+      @include reponsive(tablet) {
+        @include flex-box(flex, center, flex-end);
+        flex: 1;
+        margin-right: 10px;
+      }
+      @include reponsive(laptop) {
+        display: block;
+        margin-right: 0px;
+        flex: 0;
+      }
+    }
+    &__bars {
+      position: relative;
+      width: 4rem;
+      height: 4rem;
+      overflow: hidden;
+      .bar {
+        position: absolute;
+        height: 2px;
+        width: 92%;
+        background: red;
+        left: 4%;
+        transition: 0.5s;
+        &--top {
+          top: 10px;
+        }
+        &--center {
+          top: 50%;
+          transform: translatey(-50%);
+        }
+        &--bottom {
+          bottom: 10px;
+        }
+      }
+      &--show {
+        .bar {
+          &:nth-child(1) {
+            transform-origin: top left;
+            transform: rotate(29deg);
+            width: 95%;
+          }
+          &:nth-child(2) {
+            left: -100%;
+          }
+          &:nth-child(3) {
+            transform-origin: bottom left;
+            transform: rotate(-29deg);
+            width: 95%;
+          }
+        }
+      }
+      @include reponsive(laptop) {
+        display: none;
+      }
+    }
+  }
+  &-fixed {
+    position: fixed !important;
+    left: 0 !important;
+    box-shadow: $shadow-card !important;
+    width: 100% !important;
+    z-index: 99 !important;
+    background: white !important;
+    .nav-container {
+      box-shadow: none !important;
+      &::before {
+        content: "";
+        display: none;
+      }
+      &::after {
+        content: "";
+        display: none;
+      }
+    }
+  }
+  &--style-1 {
+    position: absolute;
+    z-index: 99;
+    padding: 0;
+    width: 100%;
+    background: transparent;
+    .nav-container {
+      position: relative;
+      box-shadow: $shadow-card;
+      padding: 10px 15px;
+      background: white;
+      &::before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        left: 1%;
+        top: 98%;
+        width: 98%;
+        height: 10px;
+        background: white;
+        box-shadow: $shadow-card;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        z-index: -2;
+        left: 2%;
+        top: calc(98% + 8px);
+        width: 96%;
+        height: 10px;
+        background: white;
+        box-shadow: $shadow-card;
+      }
+    }
+  }
+}
